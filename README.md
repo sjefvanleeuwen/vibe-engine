@@ -2,133 +2,28 @@
 
 A modern 3D game engine built with WebGPU and JavaScript.
 
+## Current Status
+
+Vibe Engine is in early development with the following components implemented:
+
+- ✅ WebGPU initialization and canvas setup
+- ✅ Basic rendering pipeline with shader support
+- ✅ Matrix math utilities for transforms
+- ✅ Resource management for models and textures
+- ✅ OBJ model loading with MTL material support
+- ✅ Texture loading and rendering
+- ✅ Animation through rotation transforms
+
 ## Overview
 
 Vibe Engine is a component-based 3D game engine designed for the web platform using WebGPU. It provides a comprehensive set of tools and systems for game development with a focus on performance, modularity, and ease of use.
 
-## Key Features
-
-- WebGPU-based rendering for modern graphics capabilities
-- Component-based architecture for flexible game object composition
-- Comprehensive math utilities for 3D operations
-- Physics integration for realistic interactions
-- Animation system for skeletal and keyframe animations
-- Particle system for visual effects
-- Audio management with spatial sound support
-- Input handling for various devices
-- UI system for in-game interfaces
-- Networking for multiplayer functionality
-- AI tools for enemy and NPC behavior
-- Debugging utilities for development
-
-## Architecture
-
-The engine is built with separation of concerns in mind, with distinct modules for different aspects of game development:
-
-1. [Engine Initialization](./docs/1-engine-initialization.md)
-2. [Rendering Pipeline](./docs/2-rendering-pipeline.md)
-3. [Scene Management](./docs/3-scene-management.md)
-4. [Resource Management](./docs/4-resource-management.md)
-5. [Component Based Design](./docs/5-component-design.md)
-6. [Math Library](./docs/6-math-library.md)
-7. [Input Management](./docs/7-input-management.md)
-8. [Camera System](./docs/8-camera-system.md)
-9. [Time Management](./docs/9-time-management.md)
-10. [Debugging Tools](./docs/10-debugging-tools.md)
-11. [Audio System](./docs/11-audio-system.md)
-12. [UI System](./docs/12-ui-system.md)
-13. [Physics Integration](./docs/13-physics-integration.md)
-14. [Animation System](./docs/14-animation-system.md)
-15. [Particle System](./docs/15-particle-system.md)
-16. [Networking](./docs/16-networking.md)
-17. [Scripting System](./docs/17-scripting-system.md)
-18. [Serialization System](./docs/18-serialization-system.md)
-19. [AI System](./docs/19-ai-system.md)
-
-For a comprehensive architecture overview, see the [Core Overview](./docs/0-core.md).
-
-## Proposed Project Structure
-
-```
-vibe-engine/
-├── src/                      # Source code
-│   ├── core/                 # Core engine functionality
-│   │   ├── Engine.js         # Main engine class
-│   │   ├── Time.js           # Time management
-│   │   └── Debug.js          # Debugging utilities
-│   ├── renderer/             # WebGPU rendering
-│   │   ├── Renderer.js       # Main renderer
-│   │   ├── ShaderLibrary.js  # WGSL shader collection
-│   │   └── RenderPass.js     # Render pass management
-│   ├── scene/                # Scene management
-│   │   ├── Scene.js          # Scene graph
-│   │   ├── Entity.js         # Game object
-│   │   └── Transform.js      # Spatial transformation
-│   ├── components/           # Component system
-│   │   ├── Component.js      # Base component class
-│   │   ├── MeshComponent.js  # Visual representation
-│   │   └── CameraComponent.js # Camera functionality
-│   ├── resources/            # Asset management
-│   │   ├── ResourceManager.js # Resource loading/caching
-│   │   ├── TextureLoader.js  # Texture handling
-│   │   └── ModelLoader.js    # 3D model importing
-│   ├── math/                 # Math utilities
-│   │   ├── Vector3.js        # 3D vector operations
-│   │   ├── Matrix4.js        # 4x4 matrix operations
-│   │   └── Quaternion.js     # Rotation representation
-│   ├── input/                # Input handling
-│   │   ├── InputManager.js   # Input detection
-│   │   └── InputMap.js       # Input configuration
-│   ├── physics/              # Physics system
-│   │   ├── PhysicsWorld.js   # Physics simulation
-│   │   ├── RigidBody.js      # Physical object
-│   │   └── Collider.js       # Collision shape
-│   ├── animation/            # Animation system
-│   │   ├── Animator.js       # Animation controller
-│   │   └── AnimationClip.js  # Animation data
-│   ├── particles/            # Particle effects
-│   │   ├── ParticleSystem.js # Particle manager
-│   │   └── Emitter.js        # Particle emitter
-│   ├── audio/                # Audio system
-│   │   ├── AudioManager.js   # Sound management
-│   │   └── AudioSource.js    # Sound emitter
-│   ├── ui/                   # User interface
-│   │   ├── UIManager.js      # UI controller
-│   │   ├── UIElement.js      # UI component base
-│   │   └── Text.js           # Text rendering
-│   ├── network/              # Multiplayer
-│   │   ├── NetworkManager.js # Network handling
-│   │   └── Replication.js    # State synchronization
-│   ├── scripting/            # Script system
-│   │   ├── ScriptManager.js  # Script handling
-│   │   └── Script.js         # Script component
-│   ├── serialization/        # Data persistence
-│   │   └── Serializer.js     # Object serialization
-│   └── ai/                   # Artificial Intelligence
-│       ├── PathFinder.js     # Navigation
-│       └── BehaviorTree.js   # Decision making
-├── docs/                     # Documentation
-│   ├── 0-core.md            # Architecture overview
-│   ├── 1-engine-initialization.md
-│   └── ...                   # Other module docs
-├── examples/                 # Example projects
-│   ├── basic/               # Basic example
-│   └── advanced/            # Advanced features demo
-├── assets/                   # Example assets
-│   ├── models/              # 3D models
-│   ├── textures/            # Image files
-│   └── sounds/              # Audio files
-├── tests/                    # Unit tests
-├── index.js                  # Main entry point
-└── package.json              # Dependencies
-```
-
 ## Getting Started
 
 1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the development server: `npm start`
-4. Open your browser to `http://localhost:8080`
+2. Ensure you have a WebGPU-compatible browser
+3. Open index.html or run a local server
+4. You should see a rotating colored square (or textured square if textures are available)
 
 ## Browser Compatibility
 
@@ -136,6 +31,116 @@ Vibe Engine requires a browser with WebGPU support. Currently, this includes:
 - Chrome 113+ with WebGPU flag enabled
 - Edge 113+ with WebGPU flag enabled
 - Firefox Nightly with WebGPU flag enabled
+
+## Project Structure
+
+```
+vibe-engine/
+├── src/                      # Source code
+│   ├── core/                 # Core engine functionality
+│   │   ├── Engine.js         # Main engine class
+│   │   ├── Time.js           # Time management
+│   │   ├── Input.js          # Input handling
+│   │   └── Debug.js          # Debugging utilities
+│   ├── renderer/             # WebGPU rendering
+│   │   ├── Renderer.js       # Main renderer
+│   │   ├── ShaderManager.js  # Shader management
+│   │   ├── PipelineFactory.js # Pipeline creation
+│   │   ├── BufferManager.js  # GPU buffer management
+│   │   ├── UniformBindingManager.js # Binding setup
+│   │   ├── TextureManager.js # Texture handling
+│   │   ├── RenderPass.js     # Render pass abstraction
+│   │   └── PostProcess.js    # Post-processing effects
+│   ├── scene/                # Scene management
+│   │   ├── Scene.js          # Scene container
+│   │   ├── Entity.js         # Entity base class
+│   │   ├── Component.js      # Component system
+│   │   ├── Transform.js      # Spatial transformations
+│   │   └── Camera.js         # Camera controls
+│   ├── resources/            # Asset management
+│   │   ├── ResourceManager.js # Central resource management
+│   │   ├── ModelLoader.js    # 3D model loading
+│   │   ├── TextureLoader.js  # Texture loading
+│   │   ├── ShaderLoader.js   # Shader loading
+│   │   └── AudioLoader.js    # Audio loading
+│   ├── physics/              # Physics system
+│   │   ├── PhysicsWorld.js   # Physics simulation
+│   │   ├── RigidBody.js      # Dynamic physics objects
+│   │   ├── Collider.js       # Collision shapes
+│   │   └── Constraints.js    # Physics constraints
+│   ├── animation/            # Animation system
+│   │   ├── Animator.js       # Animation controller
+│   │   ├── Skeleton.js       # Skeletal animation
+│   │   ├── AnimationClip.js  # Animation data
+│   │   └── Keyframe.js       # Keyframe interpolation
+│   ├── ui/                   # User interface
+│   │   ├── UIManager.js      # UI rendering/management
+│   │   ├── UIElement.js      # Base UI element
+│   │   ├── Text.js           # Text rendering
+│   │   └── Layout.js         # UI layout system
+│   ├── audio/                # Audio system
+│   │   ├── AudioManager.js   # Audio playback
+│   │   ├── SoundEffect.js    # Effect sounds
+│   │   ├── Music.js          # Background music
+│   │   └── SpatialAudio.js   # 3D audio
+│   ├── particles/            # Particle effects
+│   │   ├── ParticleSystem.js # Particle management
+│   │   ├── Emitter.js        # Particle emission
+│   │   └── ParticleEffect.js # Effect presets
+│   ├── ai/                   # Artificial intelligence
+│   │   ├── PathFinding.js    # Navigation
+│   │   ├── BehaviorTree.js   # Decision making
+│   │   └── StateMachine.js   # State management
+│   ├── network/              # Networking
+│   │   ├── NetworkManager.js # Connection handling
+│   │   ├── Replication.js    # State synchronization
+│   │   └── RPC.js            # Remote procedure calls
+│   ├── scripting/            # Scripting system
+│   │   ├── ScriptManager.js  # Script execution
+│   │   └── Script.js         # Script container
+│   └── math/                 # Math utilities
+│       ├── Vector2.js        # 2D vector operations
+│       ├── Vector3.js        # 3D vector operations
+│       ├── Matrix4.js        # 4x4 matrix operations
+│       ├── Quaternion.js     # Rotations
+│       └── MathUtils.js      # Math helpers
+├── models/                   # 3D model assets
+│   ├── square.obj            # Square model
+│   ├── square.mtl            # Square material
+│   └── cube.obj              # Cube model
+├── textures/                 # Texture assets
+├── shaders/                  # WGSL shader files
+├── audio/                    # Audio assets
+├── examples/                 # Example scenes
+├── docs/                     # Documentation
+├── tests/                    # Unit tests
+├── index.html                # Main HTML page
+└── index.js                  # Entry point
+```
+
+## Architecture Documentation
+
+See the architecture documentation for details on the engine design:
+
+1. [Engine Initialization](./1-engine-initialization.md)
+2. [Rendering Pipeline](./2-rendering-pipeline.md)
+3. [Scene Management](./3-scene-management.md)
+4. [Resource Management](./4-resource-management.md)
+5. [Component Based Design](./5-component-design.md)
+6. [Math Library](./6-math-library.md)
+7. [Input Management](./7-input-management.md)
+8. [Camera System](./8-camera-system.md)
+9. [Time Management](./9-time-management.md)
+10. [Debugging Tools](./10-debugging-tools.md)
+11. [Audio System](./11-audio-system.md)
+12. [UI System](./12-ui-system.md)
+13. [Physics Integration](./13-physics-integration.md)
+14. [Animation System](./14-animation-system.md)
+15. [Particle System](./15-particle-system.md)
+16. [Networking](./16-networking.md)
+17. [Scripting System](./17-scripting-system.md)
+18. [Serialization System](./18-serialization-system.md)
+19. [AI System](./19-ai-system.md)
 
 ## License
 
